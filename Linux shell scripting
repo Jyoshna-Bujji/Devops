@@ -1,0 +1,156 @@
+OS:
+===================
+Which acts as communication bridge between HW nad SW
+Why we use LInux over windows?
+==============================
+  Open source
+  very fast
+  secure
+When we install an Linux OS
+==========================================
+WE INSTALL OS -- kERNEL(INSIDE THAT)--> System Libraries --> sys SW, User process, Compilers
+Kernel -- Heart of OS. MEMORY, CPU, Process. Kernel repsonsinle for device, memory, process Handling syatem managements
+system libraries -- responsible for performing a task.ex: linc, GNU. Compilers
+
+free -g  -- memory of server(RAM)
+nproc --- no. of cpu's
+df -h --disk size
+top command used to managhe cpu and all Shows info for all sleeping, running process, which process consumes more cpu, memory
+free -- free memory on disk, df
+
+Shell scripting:
+#!/bin/<bash/dash/sh/ksh> -- shebang with executables (bash....) samll syntax diff will be there for these
+Diff btw sh and bash
+=====================
+even it is sh it will redirected to bash using linking conecpt but later its has changed that sh is linked to dash
+
+Diff btw sh and dash
+========================
+Previously both of them are same bcoz sh was redirecting using linking concept to bash. but now- it is not the same bcoz of some of the OShave decidedto use dash as default
+
+shell scriptin in Devops:
+=============================
+Activities such as Infra Maintenance, code(git),configuration Management
+
+checking the status or health check of a node
+
+Write a script to understand something ging wrong on VM
+=======================================================
+#!/bin/bash
+
+###############################
+# Author: Jyoshna
+#Date: ..
+
+# Decriptionof the script
+
+# Version: V1
+##########################################
+set -x # will set debug mode and print the command executed before it prints the output
+set -e # exit when there is an error
+set -o pipefail #options e, o should be used seperately becoz if the the first command is wrong and after pipeline if the it has some output then error will not pop up
+
+df -h
+free -g
+nproc
+
+
+
+Curl to get the log file
+===========================
+curl loglink |grep ......
+get request from curl
+wget --> dounlod the file fromlink
+curl will give the context from the link
+chmod 777 nodehealth.sh
+./nodehealth.sh
+ps -ef | grep amazon |awk "${print$1}" -- process , -ef give the full format of the process
+
+
+
+
+
+if Condition:
+============================
+#!/bin/bash
+a=10
+b=20
+=======================================================
+Operator	Description
+-eq	Equal to (numeric)
+-ne	Not equal to (numeric)
+-gt	Greater than (numeric)
+-lt	Less than (numeric)
+-ge	Greater than or equal to (numeric)
+-le	Less than or equal to (numeric)
+=	Equal to (string)
+!=	Not equal to (string)
+-z	String is empty
+-n	String is not empty
+====================================================
+if [ $a -gt $b ]
+then  (or)
+if [ $a -gt $b ]; then
+        echo "jyo"
+else
+        echo "Jyosj"
+fi
+===============================
+(if the file exists)
+file="/path/to/your/file.txt"
+=================================
+mkdir /tmp/test_directory
+
+if [ $? -eq 0 ]; then  # Check the exit status of mkdir command
+
+if [ -e "$file" ]; then
+
+
+
+=====================================================================================
+for i in {1..100}; do
+        if ([ `expr $i % 3` == 0 ] || [ `expr $i % 5` == 0 ]) && [ `expr $i % 15` != 0 ];
+then
+        echo "$i"
+fi;
+done
+====================================================================================
+for loop:
+=============
+for i in {1.100}; do echo $1; done
+
+
+================
+for fruit in "apple" "banana" "cherry"; do
+    ========================
+for file in /path/to/directory/*; do
+
+
+================================
+for i in $(seq 1 2 10); do
+This creates the sequence 1 3 5 7 9.
+========================
+arr=("apple" "banana" "cherry")
+
+for fruit in "${arr[@]}"; do
+=================================================
+for (( ; ; )); do
+    echo "This is an infinite loop"
+    sleep 1
+===============================
+
+
+
+number of S in mississippi -- echo "mississippi" | grep -o 's' | wc -l
+
+wc Command Options:
+
+-l: number of lines.
+
+-w: number of words.
+
+-c: number of bytes (or characters).
+
+-m: number of characters (not counting multi-byte characters).
+
+-L: Reports the length of the longest line.
