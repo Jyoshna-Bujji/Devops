@@ -1,0 +1,29 @@
+What is a server?
+A server is a specialized computer or software system that provides services, resources, or data to other computers
+or devices, known as clients, over a network. Servers are designed to manage, store, send, and process data for multiple clients simultaneously.
+Hypervisor -- is a SW which install VM on your Physical servers. VM Ware, xen are popular hypervisors using which we create logical servers(differ VM's)
+When we req for VM or EC2. THe req will go to AWS --> Hypervisor-->create the VM and AWs repond with the same
+
+How to create EC2:
+Scrip[t:
+  AWS CLI
+  AWS API
+  AWS CFT
+  Terraform(open source) It is used for HYbrid cloud pattern. if we have resources in diff cloud platforms
+  AWS CDK( Specific to AWS propriority)
+Create Basic AWS EC2 from UI:
+=========================================
+Goto EC2 service in AWS CONSOLE--> Launch INstance
+Name: EC2-Instance
+Select AMI  OS uBUNTU
+Instance type: free tier T2. micro/nano/medium/small
+Key Pair: create whch allow you to  connect to ssh( ssh -i keypair.pem username@<Publicip>
+Launch Instance
+Use Mobaxterm, gitbash, putty, No machine --windows
+iterm -- Mac
+
+To use AWS ClI -- Instlall AWS INSTALL config in the system and then used by providing Access and secret access key created from account
+AWS CFT --- Cloud Format Template
+
+Azure EC2 creation:
+Goto azure portal--> create resource --. Create VM
