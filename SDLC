@@ -1,0 +1,19 @@
+What is SDLC:
+  It is a process used in sw industry  iwth set of statndards to design , develop and test
+The actual end goal of this is to dfeliver high quality product
+There are dff phases here in loop
+1. Planning
+2. Defining
+3. Designing
+4. Building(SW)
+5. Testing
+6. Deploy
+
+Example of
+# PLanning -- Req gathering and feedback from customer
+Defining -- Preparing documents for all the research and feeback with the specifications
+Designing -- low, HIgh level design
+Building -- It means devoloping the code and push to GIT 
+Testing -- A server will be created by QE and test the code
+Deploy -- once testing is done, app will be deployed to prod and then to customer
+So this will make sure quick process, automate wich leads to efficiency
