@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#############################
+# Author: Jyothsna
+# Date: Oct-24-2025
+# version: V1
+# This script will report the AWS resource usage
+##############################
+
+# AWS EC2
+# List the EC2 instances
+set -x   # Debug Mode
+aws ec2 describe-list-instances # Will show the dump with all infor of the instance
+ aws ec2 describe-instances | jq '.Reservations[].Instances[].InstanceId'   # jq -- Json parser, if its yml then yq,. So now this command will give only instance ID
+
+To integrate to cronJob?
+=====================================
