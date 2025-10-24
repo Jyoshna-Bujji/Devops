@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# GitHub credentials
+GITHUB_USER="your_github_username"
+GITHUB_TOKEN="your_github_personal_access_token"
+GITHUB_REPO="repository_name"
+GITHUB_OWNER="repository_owner"
+
+# GitHub API URL to fetch the list of collaborators
+API_URL="https://api.github.com/repos/$GITHUB_OWNER/$GITHUB_REPO/collaborators"
+
+# Send request to GitHub API and capture the output
+response=$(curl -s -u "$GITHUB_USER:$GITHUB_TOKEN" "$API_URL")
+
+# Check if the response is empty or contains an error
+if [[ -z "$response" || "$response" == *"Not Found"* ]]; then
+    echo "Error: Unable to retrieve the list of collaborators. Please check the repository name or permissions."
+    exit 1
+fi
+
+# Parse the response using jq (you can install jq via `sudo apt-get install jq` if not installed)
+# Extract the login names of the collaborators
+collaborators=$(echo "$response" | jq -r '.[].login')
+
+# Check if there are collaborators
+if [ -z "$collaborators" ]; then
+    echo "No collaborators found for the repository."
+else
+    echo "Collaborators with access to the repository:"
+    echo "$collaborators"
+fi
