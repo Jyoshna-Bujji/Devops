@@ -1,7 +1,7 @@
-Curl is the module used to interact with API's in shell scripting
-Request module is for python
+# Curl is the module used to interact with API's in shell scripting
+# Request module is for python
 
-JQ install sudo apt install jq -y
+# JQ install sudo apt install jq -y
 
 #!/bin/bash
 
