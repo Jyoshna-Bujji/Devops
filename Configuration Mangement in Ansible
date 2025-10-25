@@ -1,0 +1,28 @@
+Configuration Mangement in Ansible
+
+Earlier when there is no Ansible for any upgrades, installations evrything was manual. Later Puppet, chef, Ansible, Salt was introduces.
+Also there were some scripts implemeted but that not much helpful bcoz if they use shell script that may be support for on distribution of Linux but not all and for Windows power shell was implemented.
+Ansible was introduced to make the life easier by creating Playbooks
+
+Pupptet:
+=============
+Pull Mechanism
+Masterslave/agent architecute  -- master server will be created and configure slaves for all instances as S1, S2, S3 AND then changes can be done
+Puppet language
+
+Ansible:
+============
+Push mechanism to install packages. Write ansible playbook scripts for all the intsances by giving Its Ip address/DNS names.
+It uses AGENTLESS model. i.e., We can just put name of the servers in inventory files with Ip and also adding pswdless authentication
+  Previouslywe need to update inventory file with IP Address of instances but with Dynamic Inventory it will automatically get the IP Addeess
+Simple yaml manifest prgmg lang.
+We can write our own Ansible modules
+
+Disadvantages of Ansible:
+===================================
+1. Windows is still having with Ansible
+2. Ansible  Debugging is not easy for devops engineers to understand the problem
+3. Performance
+
+
+
