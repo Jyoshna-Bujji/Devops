@@ -1,0 +1,24 @@
+AWS services used by Devops Engineer
+============================================
+
+AWS is a cloud provider which falls into category of SAAS as well as PAAS. 
+The main idea of AWS is that providing the products in a service model
+
+1. EC2 -- 
+2. VPC -- Virtual private clod(private , secure). security, inbound and outbound, cidr
+3. EBS -- Volumes, stoarge. How to deploy or attach volume to ur EC2/app. Practise to take backup or snaposhot of EBS. To be encrypted
+4. S3 --  Storage service , encrypted by default
+5. IAM -- Critical and key component
+6. Cloud watch -- Monitoring/Observability on AWS. We get info of any action taken in AWS
+7. LAMDA -- Its a server less compute. used for short actions. To encrypt EBS by default.Serverless means when you wnat to use lamda
+  you can directly run ur prgm/ AWS will directly run the prgm by creating the server and at the end teardwon the server automatically.
+8. Cloud Build services -- AWS Codepipeline; build, deploy. AWS supports CI/CD thru Jenkins using these 3 services
+  Using Codepipeline -- u mention what is the node, action that is performed , maven targets
+  CodeBUILD -- Takes care of compiling code, run some tests, provide some SW Packages
+  CodeDeploy -- deploying ur app onto AWS on premises servers
+9. AWS Configuration -- 
+10. Billing and Costing
+11. AWS KMS -- To keep secureing or add encrytion 
+12. Cloud Trail -- Enable ur auditing, compliance
+13. AWS EKS -- 
+14. ELK(Elastic Search)
