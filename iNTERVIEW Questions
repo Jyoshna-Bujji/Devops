@@ -1,0 +1,9 @@
+Ansible:
+==================
+Programming language thatAnsible uses :   python language
+Have u ever tried to write custom modules or contribution: Python is the prgrmg lang that ansible uses and we can contribute also
+Does Ansible supports/linux, windows:-- Yes it supports both and for Linus it uses the protocol SSH , Windows it uses Win Rm protocol
+diff btw puppet/chef and Ansible or why did you choose aAnsible than other configuration tools
+  Ansible push mechanism
+Yaml is used to write Ansible playbooks
+dOES Ansible supports all Clod providers? --es, For Ansible it s not mater whoch provider it is  only required with IP Address, SSH enabled is allowed to access from Ansible playbooks/machine
