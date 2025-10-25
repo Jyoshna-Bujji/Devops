@@ -1,1 +1,44 @@
+Git is a distributed version control system (VCS) that helps manage and track changes in source code or any collection of files over time. 
+It is widely used in software development to facilitate collaborationamong developers and maintain a historical record of changes made to the codebase.
 
+GIT --
+============
+  Opensource
+  Download GIT and implement git in org
+
+GIT HUB:
+=======================
+  Usability
+  rAISING Issues
+  Reviewing the code
+  Commenting
+  project management
+
+GIT Installation
+=================
+apt-get install git
+git
+git init ###### initialize empty git repo and .git directory will be created which is responsible for tracking the changes
+git commands
+=====================================================
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+
+=====================
+git status
+git add filename
+git commit
+git commit -m "<message>"
+git diff
+git log
+git reset -- hard commitId to go to expected patch of CI
+git push origin main  # Push changes to the 'main' branch
+git pull origin main
+git fetch origin
+git branch
+git checkout -b <branch name new>
+
+CLONE Vs FORK
+=======================
+Clone -- download the repository
+Fork -- create the copy of the repository
