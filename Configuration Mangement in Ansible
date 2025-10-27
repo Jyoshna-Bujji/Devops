@@ -94,3 +94,9 @@ So, if we want to used ansible roles we can use ansible-galaxy
 
 ansible-galaxy role init kubernetes  -- will create kubernets role with folder created under
 that bunch of files will be created which will help to structure playbook
+files such as tasks, files, handlers.
+Inside tasks we will create plybook yaml file
+meta -- used to write metadata. details of playbook, license info.
+Defaults -- store variable 
+tests -- unit tests
+handlers-- handle exception
