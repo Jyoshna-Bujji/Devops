@@ -26,3 +26,71 @@ Disadvantages of Ansible:
 
 
 
+
+Ansible Installation on Ubuntu
+============================
+sudo apt update
+sudo apt install ansible
+ansible --version
+Create two EC2. ansible and target server. What we r doing here is that our ansible server
+should be able to communicate with target server with passwdless authentication
+   login to first ubuntu server using ssh private IP
+   ssh-keygen --> will create id_rsa, id_rsa.pub keys in /home/ubuntu/.ssh
+   Open id_rsa.pub and copy the conetent
+   Logint to second server and run ssh-keygen
+   Open authorized_keys file from /home/ubuntu/.ssh and paste the id_rsa.pub content to thius file
+   ssh private Ip of target server (run from ansible server)
+So, Passwdless authentication is prerequisite for ANSIBLE
+We dont need to always write playbooks we can alsao use ansible adhoc commands we
+
+Ansible inventory file path -- /etc/ansible/hosts/inventory
+Inventory file will store the IP address of EC2
+
+ansible inventory file path IP ADDres
+vim inventory  -- add IP address
+ansible -i inventory <Ip address/all> -m "module name" -a "touch devopsCLass"
+ansible -i inventory <Ip address/all> -m "shell" -a "touch devopsCLass" and check target EC2 If devopsclass file is created or not
+
+Diff btw ansible adhoc and playbooks
+================================================
+adhoc commands for simple tasks where we execute one or two commans and hwere as playbook for multiple commands
+
+How do you group the servers in ansible
+====================================================
+[webservers]
+172.56.78.68
+ansible -i inventory webservers <Ip address/all> -m "shell" -a "touch devopsCLass"
+
+For ansible everything is configured in inventory file . you can group all the servers in inventory file and tell ansible to run for
+that particular or required or all servers
+
+
+
+
+Wrtiing playbook for nginx installation
+==========================================
+vim playbook.yml
+---   //This 3 dash indicates that this is a yaml file
+- name: Install and start nginx
+ hosts: all
+ become: true
+ tasks:
+  - name: Install nginx
+    apt: ///this is the module to install
+      name: nginx
+      state: present
+   - name: Start nginx
+      service:
+        name: nginx
+        state: started
+
+
+run: ansible-playbook -vvv -i inventory playbookname.yml
+
+This is  a simple task But what is we need to install kubernetes which a lot of tasks
+like 50 and so many variable which is complex. So for such it is recommended
+to use ansible Roles where we can properly structure variables.
+So, if we want to used ansible roles we can use ansible-galaxy
+
+ansible-galaxy role init kubernetes  -- will create kubernets role with folder created under
+that bunch of files will be created which will help to structure playbook
