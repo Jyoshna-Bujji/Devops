@@ -1,3 +1,58 @@
+ANSIBLE
+Why Ansible:
+So for every org have system admins and they do configuration management but it should have every application up to date like java app, webserves…etc. To update if they use script that script may not work for both windows and linux, example yum command which may work in ubuntu but not in redhat. So this is the problem they need to update every server/sys manually. This will take time and hectic. Then we got  puppet, chef,salt which are very complex in nature then ANSIBLE came into picture
+
+Ansible is an open-source automation tool used for tasks such as:
+•	Configuring systems
+•	Deploying applications
+•	Managing servers
+
+Ansible is a configuration management tool using YAML where we write playbooks.
+We have control and manage nodes. Control node is VM and manage node is windows/linux/…
+Ansible is not only a config mng tool, it’s a power automation tool. It also provode provision(EC2,S3,VM), CI/CD deploying, N/W automation.
+To say WHAT IS ANSIBLE  It is an powerful automation platform where it can help you for provisioning, configuration(of VM’s), deploying, networking
+We have Bash/ Python scripting but the problem is ex BASH – This cript may work in linux not in Windows. Python script we can write the script but we need to login all mchines and do the task and one more prblm is maintenance. So ansible we install in control node(EC2) and install in every machine.
+
+When we use python over Ansible: we use python when we need an API.
+Ansible installation: pip install ansible
+		      Ansible –version
+
+ANSIBLE adhoc commands:
+
+How to setup Passwordless Authentication:
+ssh-copy-id -f "-o IdentityFile <PATH TO PEM FILE>" ubuntu@<INSTANCE-PUBLIC-IP>
+•	ssh-copy-id: This is the command used to copy your public key to a remote machine.
+•	-f: This flag forces the copying of keys, which can be useful if you have keys already set up and want to overwrite them.
+•	"-o IdentityFile ": This option specifies the identity file (private key) to use for the connection. The -o flag passes this option to the underlying ssh command.
+•	ubuntu@: This is the username (ubuntu) and the IP address of the remote server you want to access.
+Using Password
+•	Go to the file /etc/ssh/sshd_config.d/60-cloudimg-settings.conf
+•	Update PasswordAuthentication yes
+•	Sudo passwd ubuntu (set passwd)
+•	Restart SSH -> sudo systemctl restart ssh
+•	ssh-copy-id ubuntu@IP
+Ansible Inventory:
+Inventory is heart of ansible used to access manage nodes by control nodes. This file can be any where with .ini extension. If you want you can kept in /etc/ansible/hosts
+Vim inventory.ini
+               [app]
+	ubuntu@Ip address of ec2(manage node)
+ansible [pattern] -m [module] -a "[module options]"
+command to run this is ansible -i inventory.ini -m ping all
+ansible -i inventory.ini -m ping  -a “apt install opendk” all/app
+
+We have two ways 1. Writing yaml format 2. using adhoc commands
+Yaml written with help of playbooks for critical like that requires multiple steps. reusable
+Adhoc commnds used for simple tasks.
+Common tasks done by devops using adhoc are managinf files, packages
+
+
+YAML: 
+It is a human readable data serialization
+
+
+ 
+
+
 Configuration Mangement in Ansible
 
 Earlier when there is no Ansible for any upgrades, installations evrything was manual. Later Puppet, chef, Ansible, Salt was introduces.
