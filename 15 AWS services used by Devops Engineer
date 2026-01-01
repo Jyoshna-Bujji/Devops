@@ -16,9 +16,11 @@ The main idea of AWS is that providing the products in a service model
   Using Codepipeline -- u mention what is the node, action that is performed , maven targets
   CodeBUILD -- Takes care of compiling code, run some tests, provide some SW Packages
   CodeDeploy -- deploying ur app onto AWS on premises servers
-9. AWS Configuration -- 
+9. AWS Configuration -- u can check what configurations done correctly?
 10. Billing and Costing
-11. AWS KMS -- To keep secureing or add encrytion 
-12. Cloud Trail -- Enable ur auditing, compliance
-13. AWS EKS -- 
-14. ELK(Elastic Search)
+11. AWS KMS -- To keep secureing or add encrytion ex: s3, EBS Volumes,
+12. Cloud Trail -- Enable ur  operational and risk auditing, governance, compliance(EBS should be encrypted),track API activities and get the logs
+13. AWS EKS -- Elastic Kubernetes service.
+EKS/ECS diff?
+ ECS properitary service, EKS -managed kuber service
+14. ELK(Elastic Search stack) -- important  for loggin info, errors from services
