@@ -1,6 +1,9 @@
 ANSIBLE
 Why Ansible:
-So for every org have system admins and they do configuration management but it should have every application up to date like java app, webserves…etc. To update if they use script that script may not work for both windows and linux, example yum command which may work in ubuntu but not in redhat. So this is the problem they need to update every server/sys manually. This will take time and hectic. Then we got  puppet, chef,salt which are very complex in nature then ANSIBLE came into picture
+So for every org have system admins and they do configuration management but it should have every application up to date like java app, webserves…etc.
+To update if they use script that script may not work for both windows and linux, example yum command which may work in ubuntu but not in redhat. 
+So this is the problem they need to update every server/sys manually. This will take time and hectic. Then we got  puppet, chef,salt which are very 
+complex in nature then ANSIBLE came into picture
 
 Ansible is an open-source automation tool used for tasks such as:
 •	Configuring systems
@@ -61,7 +64,7 @@ Ansible was introduced to make the life easier by creating Playbooks
 
 Pupptet:
 =============
-Pull Mechanism
+Pull Mechanism what?
 Masterslave/agent architecute  -- master server will be created and configure slaves for all instances as S1, S2, S3 AND then changes can be done
 Puppet language
 
@@ -79,24 +82,31 @@ Disadvantages of Ansible:
 2. Ansible  Debugging is not easy for devops engineers to understand the problem
 3. Performance
 
+Ansible uses python
+playbooks written in YAML
+Ansible supports both Linux and Windows using SSH and winRM protcols respectively
 
+Ansible galaxy: share the modules
 
 
 Ansible Installation on Ubuntu
 ============================
-sudo apt update
+sudo apt update -- package update
 sudo apt install ansible
 ansible --version
+
 Create two EC2. ansible and target server. What we r doing here is that our ansible server
 should be able to communicate with target server with passwdless authentication
+ssh-copy-id Ip address of target but sometimes it may not have all permissions required so follow second approach
+
    login to first ubuntu server using ssh private IP
-   ssh-keygen --> will create id_rsa, id_rsa.pub keys in /home/ubuntu/.ssh
+  >> ssh-keygen --> will create id_rsa(private), id_rsa.pub keys in /home/ubuntu/.ssh
    Open id_rsa.pub and copy the conetent
-   Logint to second server and run ssh-keygen
-   Open authorized_keys file from /home/ubuntu/.ssh and paste the id_rsa.pub content to thius file
-   ssh private Ip of target server (run from ansible server)
+   Login to second server(Target server) and run >> ssh-keygen
+   Open authorized_keys file from /home/ubuntu/.ssh and paste the id_rsa.pub content(from ansible server) to this file
+  >> ssh private Ip of target server (run from ansible server)
 So, Passwdless authentication is prerequisite for ANSIBLE
-We dont need to always write playbooks we can alsao use ansible adhoc commands we
+We dont need to always write playbooks we can also use ansible adhoc commands
 
 Ansible inventory file path -- /etc/ansible/hosts/inventory
 Inventory file will store the IP address of EC2
@@ -127,11 +137,11 @@ Wrtiing playbook for nginx installation
 vim playbook.yml
 ---   //This 3 dash indicates that this is a yaml file
 - name: Install and start nginx
- hosts: all
- become: true
- tasks:
-  - name: Install nginx
-    apt: ///this is the module to install
+  hosts: all
+  become: true
+  tasks:
+   - name: Install nginx
+     apt: ///this is the module to install
       name: nginx
       state: present
    - name: Start nginx
@@ -154,4 +164,9 @@ Inside tasks we will create plybook yaml file
 meta -- used to write metadata. details of playbook, license info.
 Defaults -- store variable 
 tests -- unit tests
-handlers-- handle exception
+handlers-- handle exception.
+tasks
+readme.id
+
+Ansible interview questions
+https://www.youtube.com/watch?v=j5PgN0J3d7M&t=4s
