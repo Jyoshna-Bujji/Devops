@@ -4,7 +4,7 @@ AWS services used by Devops Engineer
 AWS is a cloud provider which falls into category of SAAS as well as PAAS. 
 The main idea of AWS is that providing the products in a service model
 
-1. EC2 -- 
+1. EC2 -- Elastic cloud compute
 2. VPC -- Virtual private clod(private , secure). security, inbound and outbound, cidr
 3. EBS -- Volumes, stoarge. How to deploy or attach volume to ur EC2/app. Practise to take backup or snaposhot of EBS. To be encrypted
 4. S3 --  Storage service , encrypted by default
