@@ -1,0 +1,55 @@
+Terraform you can achieve
+1. Manage any infrastructure
+2. Track any infrastructure
+3. Automate changes
+4. Standardize configurations
+5. Collaborate
+
+Lifecyckle of Terraform
+Write -->plan-->Apply
+
+Commands for terraform
+terraform init -- initialize the terraform provider. So whatever the confi mentione din main.tf file the provider details 
+those config wll be created in localand you will be able to communicate with that provider
+terraform plan
+terraform apply
+terraform destroy
+
+https://github.com/iam-veeramalla/write_your_first_terraform_project
+https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
+
+So the order is
+Provider details
+terraform version
+region of providere
+resources
+
+Ti use/run terraform you should first configure the provider like AWS. We can configure AWS using
+>>aws configure 
+provide th ID;s asked for
+
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.16"
+    }
+  }
+
+//Terraform init will check for above set lo lines 
+  required_version = ">= 1.2.0"    //terraform version
+}
+
+provider "aws" {
+  region  = "us-west-2"
+}
+
+resource "aws_instance" "app_server" {
+  ami           = "ami-830c94e3"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "Terraform_Demo"
+  }
+}
+
